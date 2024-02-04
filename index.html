@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Form</title>
+</head>
+<body>
+    <h1>Test Form</h1>
+    <form method="post" action="/">
+        <label for="test_name">Test Name:</label>
+        <input type="text" name="test_name" required>
+        <br>
+        <label for="test_duration">Test Duration (in minutes):</label>
+        <input type="number" name="test_duration" required>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Tests</h2>
+    <ul>
+        {% for test in tests %}
+            <li>{{ test.test_name }} - Duration: {{ test.test_duration }} minutes - Created at: {{ test.created_at }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
